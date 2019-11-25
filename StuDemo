@@ -1,0 +1,76 @@
+import java.util.*;
+
+class Student
+{
+ String name;
+ String USN;
+ int credit[]=new int[9];
+ int marks[]=new int[9];
+ int i=0;
+ int s1=0,s2=0;
+ float s3;
+ 
+ void get()
+ {
+ Scanner s=new Scanner(System.in);
+ name=s.next();
+ USN=s.next();
+ 
+ for(i=0;i<9;i++)
+ {
+  credit[i]=s.nextInt();
+  }
+  
+  for(i=0;i<9;i++)
+  {
+   marks[i]=s.nextInt();
+   }
+   
+ }
+ 
+ void Display()
+ {
+ System.out.println("Name of student:="+name + "\n USN:" +USN);
+  System.out.println("Credits for courses are and marks are:");
+  for(i=0;i<9;i++)
+  {
+   System.out.println(credit[i]);
+   }
+   
+   for(i=0;i<9;i++)
+  {
+   System.out.println(marks[i]);
+   }
+ }
+ 
+ void SGPA()
+ {
+  for(i=0;i<9;i++)
+  {
+   s2=s2+(credit[i]*marks[i]);
+   }
+   
+   for(i=0;i<9;i++)
+  {
+   s1=s1+credit[i];
+   }
+   
+   s3=s2/s1;
+    System.out.println("The SGPA is "+s3);
+  }
+  }
+ 
+ class stuDemo
+ {
+ public static void main(String args[])
+ {
+  Student std=new Student();
+  Student std2=new Student();
+  std.get();
+  std.Display();
+  std.SGPA();
+  std2.get();
+  std2.Display();
+  std.SGPA();
+  }
+ }
